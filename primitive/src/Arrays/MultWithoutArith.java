@@ -1,3 +1,5 @@
+package Arrays;
+
 public class MultWithoutArith {
 
     public static void main(String[] args) {

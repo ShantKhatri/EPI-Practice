@@ -1,4 +1,5 @@
-import javax.swing.*;
+package Arrays;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

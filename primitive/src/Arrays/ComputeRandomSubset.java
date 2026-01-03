@@ -1,4 +1,5 @@
-import javax.swing.*;
+package Arrays;
+
 import java.util.*;
 
 public class ComputeRandomSubset {

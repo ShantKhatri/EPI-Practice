@@ -1,3 +1,5 @@
+package Arrays;
+
 public class DivideWIthoutArith {
     public static void main(String[] args) {
         System.out.println(divide(13,3));
