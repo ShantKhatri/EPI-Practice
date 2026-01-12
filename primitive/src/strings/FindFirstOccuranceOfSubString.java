@@ -1,4 +1,4 @@
-package Strings;
+package strings;
 
 public class FindFirstOccuranceOfSubString {
     public static int ranibKarp(String t, String s) {

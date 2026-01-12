@@ -1,4 +1,4 @@
-package Strings;
+package strings;
 
 public class SpreadSheetColEncoding {
     public static int ssDecodeColID(final String col) {

@@ -1,4 +1,4 @@
-package Arrays;
+package arrays;
 
 public class DivideWIthoutArith {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Strings;
+package strings;
 
 public class BaseConversion {
     public static String convertBase(String numAsString, int b1, int b2) {
