@@ -216,6 +216,82 @@ public class SamplePractice {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
+    public static BinaryTreeNode<Integer> searchInBST(BinaryTreeNode<Integer> root, int target) {
+        if (root == null) return null;
+
+        if (target < root.data) {
+            return  searchInBST(root.left, target);
+        } else if (target > root.data) {
+            return searchInBST(root.right, target);
+        } else  {
+            return root;
+        }
+    }
+
+    public static boolean isValidBST(BinaryTreeNode<Integer> root) {
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    private static boolean isValidBST(BinaryTreeNode<Integer> node, long min, long max) {
+        if (node == null) return true;
+
+        if (node.data <= min || node.data >= max) return false;
+
+        return isValidBST(node.left, min, node.data)
+                && isValidBST(node.right, node.data, max);
+    }
+
+    public static List<List<Integer>> zigzagLevelOrderTraversal(BinaryTreeNode<Integer> root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Queue<BinaryTreeNode<Integer>> queue = new LinkedList<>();
+        queue.add(root);
+
+        boolean leftToRight = true;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                BinaryTreeNode<Integer> node = queue.poll();
+                if (leftToRight) level.addLast(node.data);
+                else {
+                    level.addFirst(node.data);
+                }
+
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+
+            result.add(level);
+            leftToRight = !leftToRight;
+        }
+        return result;
+    }
+
+    public static List<Integer> rightSideViewBT(BinaryTreeNode<Integer> root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Queue<BinaryTreeNode<Integer>> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+                BinaryTreeNode<Integer> node = queue.poll();
+                if (i == size - 1) result.add(node.data);
+
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+        }
+        return result;
+    }
+
 
 
 }
